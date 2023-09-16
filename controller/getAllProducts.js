@@ -1,11 +1,13 @@
+import {query} from "../database/index.js"
+
 const getAllProducts = async (req, res) => {
     try {
         const data = await query("SELECT * FROM products_table");
-        console.log(data.rows) 
-        res.render("pages/index", { title : lists });
+        const lists = data.rows;
+        res.render("pages/index", { lists });
       } catch (error) {
         console.log(error);
       }
 }
 
-export default getAllProducts
+export default getAllProducts;

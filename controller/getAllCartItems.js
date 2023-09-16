@@ -1,3 +1,5 @@
+import { query } from "../database/index.js";
+
 const getAllCartItems = async (req, res) => {
     try {
       const data = await query("SELECT * FROM cart_items");
