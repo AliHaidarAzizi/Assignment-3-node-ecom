@@ -5,57 +5,16 @@
     <%- include('../components/header',{cartButtonShow:true}); %>
     <main>
       <section class="product-listing">
-        <!-- Sample Product  -->
-        <div class="product">
-          <img src="assets/1.png" alt="Product 1" />
-          <h2>Product 1</h2>
-          <p>Description of Product 1.</p>
-          <p class="price">$19.99</p>
-          <button class="add-to-cart">Add to Cart</button>
-        </div>
-        <!-- Sample Product  -->
-        <div class="product">
-          <img src="assets/1.png" alt="Product 1" />
-          <h2>Product 1</h2>
-          <p>Description of Product 1.</p>
-          <p class="price">$19.99</p>
-          <button class="add-to-cart">Add to Cart</button>
-        </div>
-        <!-- Sample Product  -->
-        <div class="product">
-          <img src="assets/1.png" alt="Product 1" />
-          <h2>Product 1</h2>
-          <p>Description of Product 1.</p>
-          <p class="price">$19.99</p>
-          <button class="add-to-cart">Add to Cart</button>
-        </div>
-        <!-- Sample Product  -->
-        <div class="product">
-          <img src="assets/1.png" alt="Product 1" />
-          <h2>Product 1</h2>
-          <p>Description of Product 1.</p>
-          <p class="price">$19.99</p>
-          <button class="add-to-cart">Add to Cart</button>
-        </div>
-        <!-- Sample Product  -->
-        <div class="product">
-          <img src="assets/1.png" alt="Product 1" />
-          <h2>Product 1</h2>
-          <p>Description of Product 1.</p>
-          <p class="price">$19.99</p>
-          <button class="add-to-cart">Add to Cart</button>
-        </div>
-        <!-- Sample Product  -->
-        <div class="product">
-          <img src="assets/1.png" alt="Product 1" />
-          <h2>Product 1</h2>
-          <p>Description of Product 1.</p>
-          <p class="price">$19.99</p>
-          <a href="./cart.html"></a>
-          <button class="add-to-cart">Add to Cart</button>
-        </div>
+          <% for( let i = 0; i < lists.length; i++ ) { %>
+            <div class="product">
+              <img src="<%= lists[i].product_img_url%>" alt="<%= lists[i].product_name %>" />
+              <h2><%= lists[i].product_name %></h2>
+              <p><%= lists[i].product_description%></p>
+              <p class="price"><%=lists[i].currency%> <%= lists[i].price%></p>
 
-        <!-- Add more sample products here -->
+            </div>   
+          <% } %>
+
       </section>
     </main>
   </body>

@@ -2,6 +2,7 @@ import express from "express";
 import { dbInit } from "./database/index.js";
 import appRoutes from "./routes/index.js";
 
+
 const app = express()
 const port = 8080;
 
