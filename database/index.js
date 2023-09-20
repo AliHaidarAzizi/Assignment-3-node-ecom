@@ -8,7 +8,7 @@ const pool = new Pool({
     host: "db.hkzcvjnkrsfbyanwpgys.supabase.co",
     user: "postgres",
     database: "postgres",
-    password: "3_H!W?7NEzt%BcK",
+    password: "v8h2XXFtm3VcXKU",
     port: 5432,
   });
 

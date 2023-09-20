@@ -6,22 +6,26 @@
     <main>
       <section class="cart-items">
         <!-- Sample Cart Items -->
+        <% for( let i = 0; i < lists.length; i++ ) { %>
         <div class="cart-item">
-          <img src="assets/1.png" alt="Product 1" />
+          <img src="<%= lists[i].product_img_url%>" alt="<%= lists[i].product_name%>" />
           <div class="item-details">
-            <h3>Product 1</h3>
-            <p class="price">$19.99</p>
+            <h3><%= lists[i].product_name%></h3>
+            <p class="price"><%= lists[i].currency%> <%= lists[i].price%></p>
           </div>
           <div class="item-quantity">
             <input type="number" value="1" min="1" />
           </div>
           <div class="item-total">
-            <p class="total-price">$19.99</p>
+            <p class="total-price"><%= lists[i].currency%> <%= lists[i].price%></p>
           </div>
           <div class="item-actions">
-            <button>Remove</button>
+            <form action="/delete-cart-item/<%= lists[i].id%>" method="post">
+              <button type="submit">Remove</button>
+            </form>
           </div>
         </div>
+        <% } %>
         <!-- Add more cart items here -->
       </section>
     </main>

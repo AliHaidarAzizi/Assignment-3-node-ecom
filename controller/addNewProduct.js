@@ -12,7 +12,7 @@ const addNewProduct = async (req, res) => {
         const stock = req.body.stock;
 
 
-        await query("INSERT INTO products_table (product_name varchar(255) not null, product_description text, price decimal(10, 2), currency char(3), product_img_url varchar(255), stock int) VALUES ($1, $2, $3, $4, $5, $6);", [
+        await query("INSERT INTO products_table (product_name, product_description, price, currency, product_img_url, stock) VALUES ($1, $2, $3, $4, $5, $6);", [
             product_name,
             product_description,
             price,
